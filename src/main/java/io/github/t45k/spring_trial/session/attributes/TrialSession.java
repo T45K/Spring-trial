@@ -1,4 +1,4 @@
-package io.github.t45k.spring_trial.session.model;
+package io.github.t45k.spring_trial.session.attributes;
 
 import lombok.Data;
 

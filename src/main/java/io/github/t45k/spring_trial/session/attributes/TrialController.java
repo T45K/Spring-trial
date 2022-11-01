@@ -1,21 +1,25 @@
-package io.github.t45k.spring_trial.session;
+package io.github.t45k.spring_trial.session.attributes;
 
 import io.github.t45k.spring_trial.session.model.Request;
-import io.github.t45k.spring_trial.session.model.TrialSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
+/**
+ * SessionAttributesを使ったセッション管理
+ */
 @RestController
 @SessionAttributes(types = TrialSession.class) // メソッド抜けたタイミングでこの型のオブジェクトがセッションに保存されるっぽい
 @Slf4j
-public class SessionRestController {
+@RequestMapping("1")
+public class TrialController {
 
     @GetMapping
     public Map<String, String> index(@ModelAttribute("trial") final TrialSession trialSession,
