@@ -1,4 +1,4 @@
-package io.github.t45k.spring_trial.session.rest_template;
+package io.github.t45k.spring_trial.redis.rest_template;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataAccessException;
