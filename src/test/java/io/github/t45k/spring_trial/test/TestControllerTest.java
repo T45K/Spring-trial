@@ -22,8 +22,8 @@ public class TestControllerTest {
     @Test
     public void test() throws Exception {
         final MvcResult mvcResult = mockMvc.perform(get("/test")).andExpect(content().string("0")).andReturn();
-        final String sessionCookieValue = mvcResult.getResponse().getCookie("SESSION").getValue();
-        mockMvc.perform(get("/test").cookie(new Cookie("SESSION", sessionCookieValue))).andExpect(content().string("1"));
-        mockMvc.perform(get("/test").cookie(new Cookie("SESSION", sessionCookieValue))).andExpect(content().string("2"));
+        final Cookie[] cookies = mvcResult.getResponse().getCookies();
+        mockMvc.perform(get("/test").cookie(cookies)).andExpect(content().string("1"));
+        mockMvc.perform(get("/test").cookie(cookies)).andExpect(content().string("2"));
     }
 }
